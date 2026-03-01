@@ -1,67 +1,87 @@
-# CPP Module 01 - Memory Allocation, Pointers to Members, and File Streams
+# CPP-Module-01
 
-This module focuses on the practical differences between **Stack** and **Heap** memory allocation in C++. It also explores the power of **Pointers to Members** and the basics of file manipulation using **C++ Streams**.
+A comprehensive C++98 learning module covering fundamental object-oriented programming concepts with practical exercises and examples.
 
+## Overview
 
+CPP-Module-01 provides seven progressive exercises designed to build a solid understanding of C++ core concepts including memory management, object-oriented design patterns, and advanced language features.
 
-## 🧠 Key Learning Objectives
+## Exercises
 
-* **🟢 Memory Management**: Understanding the lifecycle of objects allocated on the Stack (automatic) vs. the Heap (manual using `new` and `delete`).
-* **🔵 References vs. Pointers**: Learning when to use references for safety and pointers for flexibility.
-* **🟡 Member Function Pointers**: Implementing dynamic function calling within a class to replace complex conditional logic.
-* **🔴 File I/O**: Mastering the usage of `std::ifstream` and `std::ofstream` for reading and writing files.
+### **Ex00: Memory Allocation & Constructors**
+- **Focus**: Stack vs. Heap allocation, constructor initialization
+- **Concepts**: 
+  - Dynamic memory allocation with `new` operator
+  - Stack-based object creation
+  - Constructor and destructor lifecycle
+- **Example**: Create Zombie objects on both stack and heap, observe destruction patterns
 
+### **Ex01: Array Allocation & Destructors**
+- **Focus**: Array allocation, bulk object initialization
+- **Concepts**:
+  - Array allocation with `new[]` and `delete[]`
+  - Default constructors and setter methods
+  - Proper memory cleanup for arrays
+- **Example**: Allocate a horde of zombies and initialize them with names
 
+### **Ex02: References vs. Pointers**
+- **Focus**: Understanding fundamental differences between pointers and references
+- **Concepts**:
+  - Pointer dereferencing (`*ptr`)
+  - Reference aliasing (shares same memory address)
+  - Memory address introspection
+- **Example**: Compare pointer and reference behavior when modifying string values
 
-## 📂 Exercise Breakdown
+### **Ex03: References in Classes**
+- **Focus**: Using references and pointers as member variables
+- **Concepts**:
+  - Reference members (must be initialized in constructor)
+  - Pointer members (can be NULL, set later)
+  - Access operators (`->` for pointers, `.` for references)
+  - Const correctness
+- **Example**: HumanA uses a reference weapon (always present), HumanB uses a pointer weapon (optional)
 
-### 🟢 Ex00: BraiiiiiiinnnzzzZ
-* **Goal**: Implement a `Zombie` class and understand two different creation methods.
-* **Concepts**:
-    * **`newZombie`**: Heap allocation for objects that must persist beyond the current scope.
-    * **`randomChump`**: Stack allocation for temporary objects.
-    * Identifying the exact moment of destruction via class destructors.
+### **Ex04: File I/O & String Manipulation**
+- **Focus**: File operations and string replacement algorithm
+- **Concepts**:
+  - Input/output file streams (`ifstream`, `ofstream`)
+  - String finding and substring extraction
+  - Error handling
+- **Example**: Implement a `sed`-like utility that finds and replaces string patterns in files
 
-### 🟠 Ex01: Moar brainz!
-* **Goal**: Allocate an entire "horde" of Zombies in a single call.
-* **Concepts**:
-    * **Array Allocation**: Using `new[]` to allocate memory for multiple objects.
-    * **Batch Deletion**: Using `delete[]` to properly free allocated arrays and avoid memory leaks.
+### **Ex05: Function Pointers & Static Members**
+- **Focus**: Advanced pointer usage and static arrays
+- **Concepts**:
+  - Function pointers and member function pointers
+  - Static member variables
+  - Switch-case dispatch pattern
+- **Example**: Use function pointer arrays to dynamically call different complaint methods based on input
 
-### 🔵 Ex02: HI THIS IS BRAIN
-* **Goal**: Demystify the relationship between values, pointers, and references.
-* **Concepts**:
-    * Declaring and printing addresses and values of a `std::string`, a pointer to it (`stringPTR`), and a reference to it (`stringREF`).
+### **Ex06: Switch Statements & Fall-through Logic**
+- **Focus**: Switch statement control flow and intentional fall-through
+- **Concepts**:
+  - Switch case fall-through (cascading execution)
+  - Default case handling
+  - Conditional flow based on severity levels
+- **Example**: Filter complaints by severity level, executing all messages from the selected level downward
 
-### 🟣 Ex03: Unnecessary violence
-* **Goal**: Manage object dependencies between a `Human` and their `Weapon`.
-* **Concepts**:
-    * **Member Types**: Deciding whether to store a class member as a pointer (if it can be NULL or change) or a reference (if it is constant and mandatory).
+## Language & Standards
 
-### 🟡 Ex04: Sed is for losers
-* **Goal**: Create a program that replaces occurrences of a string within a file.
-* **Concepts**:
-    * **File Manipulation**: Opening, reading, and creating files using `<fstream>`.
-    * **String Operations**: Utilizing `std::string::find()` and `std::string::replace()` logic.
-    * Handling file errors (e.g., non-existent files or permission issues).
+- **Language**: C++98
+- **Compiler Flags**: `-Wall -Wextra -Werror -std=c++98`
+- **Key Requirements**: No undefined behavior, strict compliance with C++98 standard
 
-### ⚪ Ex05: Harl 2.0
-* **Goal**: Implement a "Harl" object that complains at different levels (DEBUG, INFO, WARNING, ERROR).
-* **Concepts**:
-    * **Pointers to Member Functions**: Creating an array of function pointers to call specific level-methods without using an `if/else if` forest.
-    * Improving code scalability and readability.
+## Learning Outcomes
 
-### 🔴 Ex06: Harl filter
-* **Goal**: Filter Harl's output based on a minimum log level using `switch`.
-* **Concepts**:
-    * **Switch Case Fall-through**: Implementing a logic where a selected level triggers itself and all subsequent, more severe levels.
-    * Command-line argument parsing and input validation.
+By completing this module, you will understand:
+- Memory management (stack vs. heap allocation)
+- Object-oriented design with proper constructor/destructor patterns
+- Pointer and reference semantics
+- File I/O operations
+- Advanced function pointer techniques
+- Static members and member function pointers
+- Control flow patterns in C++
 
+---
 
-
-## 🚀 Technical Requirements
-* **Standard**: C++ 98.
-* **Compiler**: `c++` with flags `-Wall -Wextra -Werror`.
-* **Prohibited**: No `printf()`, `malloc()`, or `free()`. Use C++-style `std::cout`, `new`, and `delete` exclusively.
-* **Memory Safety**: No memory leaks allowed. All heap-allocated objects must be properly deleted.
-
+*This module provides hands-on experience with C++ fundamentals essential for building robust applications.*
