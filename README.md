@@ -2,9 +2,6 @@
 
 A comprehensive C++98 learning module covering fundamental object-oriented programming concepts with practical exercises and examples.
 
-## Overview
-
-CPP-Module-01 provides seven progressive exercises designed to build a solid understanding of C++ core concepts including memory management, object-oriented design patterns, and advanced language features.
 
 ## Exercises
 
@@ -65,20 +62,7 @@ CPP-Module-01 provides seven progressive exercises designed to build a solid und
   - Conditional flow based on severity levels
 - **Example**: Filter complaints by severity level, executing all messages from the selected level downward
 
-## Language & Standards
 
-- **Language**: C++98
-- **Compiler Flags**: `-Wall -Wextra -Werror -std=c++98`
-- **Key Requirements**: No undefined behavior, strict compliance with C++98 standard
-
-## Learning Outcomes
-
-By completing this module, you will understand:
-- Memory management (stack vs. heap allocation)
-- Object-oriented design with proper constructor/destructor patterns
-- Pointer and reference semantics
-- File I/O operations
-- Advanced function pointer techniques
 - Static members and member function pointers
 - Control flow patterns in C++
 
